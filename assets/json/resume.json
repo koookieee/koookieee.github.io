@@ -1,12 +1,12 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Vidushee Vats",
+    "label": "Computer Vision Intern",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "vatsvidushee@gmail.com",
+    "phone": "+91 9718222909",
+    "url": "https://vatsvidushee.github.io/",
+    "summary": "Working as Computer Vision intern at Zocket AI",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",

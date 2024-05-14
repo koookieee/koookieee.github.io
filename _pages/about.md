@@ -14,9 +14,9 @@ profile:
 
 
 news: false # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
-projects: true
+projects: true # includes a list of projects
 ---
 
 I am a pre-final year student at Bennett University studying Computer Science.

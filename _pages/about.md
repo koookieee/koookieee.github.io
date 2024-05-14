@@ -22,4 +22,4 @@ projects: true # includes a list of projects
 I am a pre-final year student at Bennett University studying Computer Science.
 My interest lies in the field of Deep Learning.
 Currently, I am working at Zocket AI as a Computer Vision intern.
-Apart from this I am doing some personal projects on Deep Learning based on arXiv papers.
+Apart from this I keep myself indulged in projects and research work.

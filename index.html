@@ -39,6 +39,112 @@
 
 <body>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Floating Side Nav -->
+  <nav id="side-nav">
+    <div class="side-nav-label">Navigate</div>
+    <a href="#home" class="side-nav-link">Home</a>
+    <a href="#bio" class="side-nav-link">Biography</a>
+    <a href="#exp" class="side-nav-link">Experience</a>
+    <div class="side-nav-subs">
+      <a href="#exp" class="side-nav-sub">Halmstad University</a>
+      <a href="#exp" class="side-nav-sub">TUM &amp; SAP</a>
+      <a href="#exp" class="side-nav-sub">Georgia Tech</a>
+      <a href="#exp" class="side-nav-sub">Zocket</a>
+    </div>
+    <a href="#pub" class="side-nav-link">Research</a>
+  </nav>
+
+  <style>
+    #side-nav {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.1);
+      padding: 16px 0;
+      min-width: 200px;
+      border: 1px solid #e8eaed;
+    }
+    #side-nav .side-nav-label {
+      padding: 0 20px 10px 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #adb5bd;
+    }
+    #side-nav .side-nav-link {
+      padding: 9px 20px;
+      color: #3c4043;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+      font-weight: 500;
+      transition: all 0.15s ease;
+      border-left: 3px solid transparent;
+    }
+    #side-nav .side-nav-link:hover {
+      color: #1a73e8;
+      background: #f0f6ff;
+    }
+    #side-nav .side-nav-link.active {
+      color: #1a73e8;
+      font-weight: 600;
+      border-left: 3px solid #1a73e8;
+      background: #f0f6ff;
+    }
+    #side-nav .side-nav-subs {
+      padding: 2px 20px 4px 38px;
+      display: flex;
+      flex-direction: column;
+    }
+    #side-nav .side-nav-sub {
+      padding: 5px 0;
+      color: #80868b;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 400;
+      white-space: nowrap;
+      transition: color 0.15s ease;
+    }
+    #side-nav .side-nav-sub:hover {
+      color: #1a73e8;
+    }
+    @media (max-width: 1200px) {
+      #side-nav { display: none !important; }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var sections = ['home', 'bio', 'exp', 'pub'];
+      var links = document.querySelectorAll('#side-nav .side-nav-link');
+      window.addEventListener('scroll', function() {
+        var current = '';
+        sections.forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= 150) current = id;
+        });
+        links.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+        });
+      });
+    });
+  </script>
+
   <div class="container-fluid">
 
     <!-- Home -->
@@ -59,7 +165,7 @@
               <a href="https://scholar.google.co.in/citations?user=ivYo0q4AAAAJ&hl=en">Scholar</a> /
               <!-- <a href="https://dblp.org/pers/hd/m/Ma_0002:Pingchuan">DBLP</a> / -->
               <a href="https://github.com/koookieee">GitHub</a> /
-              <a href="Vidushee_s_Resume.pdf">CV</a>
+              <!-- <a href="">CV</a> -->
             </div>
           </div>
         </div>
@@ -1081,7 +1187,7 @@
 
 
     <!-- EXPERIENCE -->
-<div class="sec-wrapper pub-wrapper" id="pub">
+<div class="sec-wrapper pub-wrapper" id="exp">
   <div class="row section-head">
     <div class="col-md-auto col-wrapper">
       <div class="section-title">Experience</div>
@@ -1089,7 +1195,7 @@
   </div>
 <!-- Halmstad University -->
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-    <img src="assets/logo/Halmstad_University.png" alt="Halmstad University Logo" style="width: 60px; height: 60px; object-fit: contain; margin-right: 20px;">
+    <div style="min-width: 160px; width: 160px; margin-right: 20px; display: flex; align-items: center; justify-content: center;"><img src="assets/logo/Halmstad_University.png" alt="Halmstad University Logo" style="width: auto; height: auto; max-width: 100%;"></div>
     <div style="display: flex; flex-direction: column;">
         <h3 style="margin: 0; font-size: 15px; font-weight: bold;">Halmstad University</h3>
         <h4 style="margin: 5px 0; font-size: 14px; color: black;">Research Intern</h4>
@@ -1100,7 +1206,7 @@
 
 <!-- TUM & SAP -->
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-    <img src="assets/logo/SAPTUM.png" alt="TUM & SAP Logo" style="width: 60px; height: 60px; object-fit: contain; margin-right: 20px;">
+    <div style="min-width: 160px; width: 160px; margin-right: 20px; display: flex; align-items: center; justify-content: center;"><img src="assets/logo/SAPTUM.png" alt="TUM & SAP Logo" style="width: auto; height: auto; max-width: 100%;"></div>
     <div style="display: flex; flex-direction: column;">
         <h3 style="margin: 0; font-size: 15px; font-weight: bold;">Technical University of Munich &amp; SAP</h3>
         <h4 style="margin: 5px 0; font-size: 14px; color: black;">AI Engineer</h4>
@@ -1111,7 +1217,7 @@
 
 <!-- Georgia Institute of Technology -->
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-    <img src="assets/logo/Gtech.png" alt="Georgia Tech Logo" style="width: 60px; height: 60px; object-fit: contain; margin-right: 20px;">
+    <div style="min-width: 160px; width: 160px; margin-right: 20px; display: flex; align-items: center; justify-content: center;"><img src="assets/logo/Gtech.png" alt="Georgia Tech Logo" style="width: auto; height: auto; max-width: 100%;"></div>
     <div style="display: flex; flex-direction: column;">
         <h3 style="margin: 0; font-size: 15px; font-weight: bold;">Georgia Institute of Technology</h3>
         <h4 style="margin: 5px 0; font-size: 14px; color: black;">Computer Vision Research Affiliate</h4>
@@ -1122,7 +1228,7 @@
 
 <!-- Zocket -->
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-    <img src="assets/logo/zocket.png" alt="Zocket Logo" style="width: 60px; height: 60px; object-fit: contain; margin-right: 20px;">
+    <div style="min-width: 160px; width: 160px; margin-right: 20px; display: flex; align-items: center; justify-content: center;"><img src="assets/logo/zocket.png" alt="Zocket Logo" style="width: auto; height: auto; max-width: 100%;"></div>
     <div style="display: flex; flex-direction: column;">
         <h3 style="margin: 0; font-size: 15px; font-weight: bold;">Zocket</h3>
         <h4 style="margin: 5px 0; font-size: 14px; color: black;">Computer Vision Intern</h4>
@@ -1164,7 +1270,7 @@
     <div class="row align-items-center">
       <div class="col-xs-12 col-md-auto col-wrapper">
         <div class="figure">
-            <img src="assets/logo/ICLR.png" alt="[ICLR 2025]" height="150px" width="150px" style="object-fit: contain;">
+            <img src="assets/logo/ICLR.png" alt="[ICLR 2025]">
         </div>
       </div>
       <div class="col-xs-12 col-md col-wrapper">
@@ -1208,7 +1314,7 @@
     <div class="row align-items-center">
       <div class="col-xs-12 col-md-auto col-wrapper">
         <div class="figure">
-            <img src="assets/logo/Untitled%20design%20(1).png" alt="[LLaVA-PlantDiag]" height="150px" width="150px">
+            <img src="assets/logo/Untitled%20design%20(1).png" alt="[LLaVA-PlantDiag]">
         </div>
       </div>
       <div class="col-xs-12 col-md col-wrapper">
@@ -1254,6 +1360,11 @@
   <!-- begin: ICETCI 2023 -->
   <div class="section-item">
     <div class="row align-items-center">
+      <div class="col-xs-12 col-md-auto col-wrapper">
+        <div class="figure">
+            <img src="assets/logo/System_Architecture.jpg" alt="[ICETCI 2023]">
+        </div>
+      </div>
       <div class="col-xs-12 col-md col-wrapper">
         <div class="title">
           <a href="https://ieeexplore.ieee.org/abstract/document/10330945">An Improved Hybrid Model for Target Detection</a>

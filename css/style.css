@@ -370,3 +370,55 @@ a:hover {
   .experience-entry { flex-direction: column; align-items: flex-start !important; }
   .experience-entry > div:first-child { margin-bottom: 12px; }
 }
+
+/* A compact overview keeps every experience visible near the top. */
+.experience-overview {
+  margin: 26px 10px 0;
+  padding: 14px 0;
+  border-top: 1px solid #e8eaed;
+  border-bottom: 1px solid #e8eaed;
+}
+.experience-overview-label {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #666;
+}
+.experience-overview-links {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+.experience-overview-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+.experience-overview-links img {
+  width: 80px;
+  max-width: 100%;
+  height: 40px;
+  object-fit: contain;
+}
+.experience-overview-links a:focus-visible {
+  outline: 2px solid var(--cardinal);
+  outline-offset: 4px;
+}
+#side-nav .side-nav-sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#side-nav .side-nav-sub img {
+  width: 28px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+@media (max-width: 575.98px) {
+  .experience-overview-links { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 16px; }
+}

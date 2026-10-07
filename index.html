@@ -45,106 +45,128 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Floating Side Nav -->
-  <nav id="side-nav">
-    <div class="side-nav-label">Navigate</div>
-    <a href="#home" class="side-nav-link">Home</a>
-    <a href="#bio" class="side-nav-link">Biography</a>
-    <a href="#exp" class="side-nav-link">Experience</a>
+  <nav id="side-nav" aria-label="Page sections">
+    <div class="side-nav-label">On this page</div>
+    <a href="#home" class="side-nav-link"><i class="bi bi-house" aria-hidden="true"></i><span>Home</span></a>
+    <a href="#bio" class="side-nav-link"><i class="bi bi-person" aria-hidden="true"></i><span>Biography</span></a>
+    <a href="#exp" class="side-nav-link"><i class="bi bi-briefcase" aria-hidden="true"></i><span>Experience</span></a>
     <div class="side-nav-subs">
-      <a href="#insait" class="side-nav-sub"><img src="assets/logo/INSAIT_logo_and_slogan.png" alt="" aria-hidden="true"><span>INSAIT</span></a>
-      <a href="#lexsi" class="side-nav-sub"><img src="assets/logo/lexsi.png" alt="" aria-hidden="true"><span>Lexsi Labs</span></a>
-      <a href="#halmstad" class="side-nav-sub"><img src="assets/logo/Halmstad_University.png" alt="" aria-hidden="true"><span>Halmstad University</span></a>
-      <a href="#tum-sap" class="side-nav-sub"><img src="assets/logo/SAPTUM.png" alt="" aria-hidden="true"><span>TUM &amp; SAP</span></a>
-      <a href="#georgia-tech" class="side-nav-sub"><img src="assets/logo/Gtech.png" alt="" aria-hidden="true"><span>Georgia Tech</span></a>
-      <a href="#zocket" class="side-nav-sub"><img src="assets/logo/zocket.png" alt="" aria-hidden="true"><span>Zocket AI</span></a>
+      <a href="#insait" class="side-nav-sub"><span class="nav-logo"><img src="assets/logo/INSAIT_logo_and_slogan.png" alt="" aria-hidden="true"></span><span>INSAIT</span></a>
+      <a href="#lexsi" class="side-nav-sub"><span class="nav-logo"><img src="assets/logo/lexsi.png" alt="" aria-hidden="true"></span><span>Lexsi Labs</span></a>
+      <a href="#halmstad" class="side-nav-sub"><span class="nav-logo"><img src="assets/logo/Halmstad_University.png" alt="" aria-hidden="true"></span><span>Halmstad University</span></a>
+      <a href="#tum-sap" class="side-nav-sub"><span class="nav-logo"><img src="assets/logo/SAPTUM.png" alt="" aria-hidden="true"></span><span>TUM &amp; SAP</span></a>
+      <a href="#georgia-tech" class="side-nav-sub"><span class="nav-logo"><img src="assets/logo/Gtech.png" alt="" aria-hidden="true"></span><span>Georgia Tech</span></a>
+      <a href="#zocket" class="side-nav-sub"><span class="nav-logo"><img src="assets/logo/zocket.png" alt="" aria-hidden="true"></span><span>Zocket AI</span></a>
     </div>
-    <a href="#pub" class="side-nav-link">Research</a>
-    <a href="#projects" class="side-nav-link">Projects</a>
+    <a href="#pub" class="side-nav-link"><i class="bi bi-journal-text" aria-hidden="true"></i><span>Publications</span></a>
+    <a href="#projects" class="side-nav-link"><i class="bi bi-folder2-open" aria-hidden="true"></i><span>Projects</span></a>
   </nav>
 
   <style>
     #side-nav {
       position: fixed;
       top: 50%;
-      left: 28px;
+      left: 24px;
       transform: translateY(-50%);
       z-index: 1000;
       display: flex;
       flex-direction: column;
+      width: 210px;
+      max-height: calc(100dvh - 48px);
+      overflow-y: auto;
+      padding: 18px 10px 12px;
+      background: white;
+      border: 1px solid #e8eaed;
+      border-radius: 10px;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 14px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.1);
-      padding: 16px 0;
-      min-width: 200px;
-      border: 1px solid #e8eaed;
     }
     #side-nav .side-nav-label {
-      padding: 0 20px 10px 20px;
+      padding: 0 12px 12px;
       font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: #adb5bd;
+      font-weight: 500;
+      color: #777;
     }
     #side-nav .side-nav-link {
-      padding: 9px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 5px;
       color: #3c4043;
       text-decoration: none;
-      display: block;
-      white-space: nowrap;
       font-weight: 500;
-      transition: all 0.15s ease;
-      border-left: 3px solid transparent;
     }
-    #side-nav .side-nav-link:hover {
-      color: #1a73e8;
-      background: #f0f6ff;
-    }
-    #side-nav .side-nav-link.active {
-      color: #1a73e8;
-      font-weight: 600;
-      border-left: 3px solid #1a73e8;
-      background: #f0f6ff;
-    }
+    #side-nav .side-nav-link i { width: 16px; font-size: 15px; color: #777; }
+    #side-nav .side-nav-link:hover,
+    #side-nav .side-nav-sub:hover { background: #f7f7f7; color: var(--cardinal); }
+    #side-nav .active { background: #fdf3ea; color: var(--cardinal); }
+    #side-nav .side-nav-link.active i { color: var(--cardinal); }
     #side-nav .side-nav-subs {
-      padding: 2px 20px 4px 20px;
       display: flex;
       flex-direction: column;
+      gap: 2px;
+      margin: 4px 0 10px;
+      padding: 0 0 0 10px;
     }
     #side-nav .side-nav-sub {
-      padding: 5px 0;
-      color: #80868b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 4px 6px;
+      border-radius: 5px;
+      color: #555;
       text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 400;
-      white-space: nowrap;
-      transition: color 0.15s ease;
+      font-size: 12px;
+      line-height: 18px;
     }
-    #side-nav .side-nav-sub:hover {
-      color: #1a73e8;
+    #side-nav .nav-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 40px;
+      height: 28px;
+      overflow: hidden;
     }
-    @media (max-width: 1399px) {
-      #side-nav { display: none !important; }
-    }
+    #side-nav .side-nav-sub img { width: 40px; height: 28px; object-fit: contain; }
+    #side-nav a[href="#georgia-tech"] img,
+    #side-nav a[href="#zocket"] img { height: auto; }
+    #side-nav a[href="#insait"] img { transform: scale(1.35); }
+    #side-nav a:focus-visible { outline: 2px solid var(--cardinal); outline-offset: 2px; }
+    @media (max-width: 1359px) { #side-nav { display: none; } }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var sections = ['home', 'bio', 'exp', 'pub', 'projects'];
-      var links = document.querySelectorAll('#side-nav .side-nav-link');
-      window.addEventListener('scroll', function() {
-        var current = '';
+      var experiences = ['insait', 'lexsi', 'halmstad', 'tum-sap', 'georgia-tech', 'zocket'];
+      var links = document.querySelectorAll('#side-nav a[href]');
+      function updateNavigation() {
+        var current = 'home';
         sections.forEach(function(id) {
           var el = document.getElementById(id);
           if (el && el.getBoundingClientRect().top <= 150) current = id;
         });
+        var experience = '';
+        if (current === 'exp') {
+          experiences.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el && el.getBoundingClientRect().top <= 150) experience = id;
+          });
+        }
         links.forEach(function(link) {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+          var target = link.getAttribute('href').slice(1);
+          var active = target === current || target === experience;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
         });
-      });
+      }
+      window.addEventListener('scroll', updateNavigation, { passive: true });
+      updateNavigation();
     });
   </script>
 
@@ -226,7 +248,7 @@
 
 <!--      <div class="row section-head">-->
 <!--        <div class="col-md-auto col-wrapper">-->
-<!--          <div class="section-title">Research</div>-->
+<!--          <div class="section-title">Publications</div>-->
 <!--        </div>-->
 <!--        <div class="col-md section-sub col-wrapper">-->
 <!--          (* indicates equal contribution, <span class="representative">highlight</span> indicates representative papers)-->

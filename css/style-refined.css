@@ -418,8 +418,6 @@ a:hover {
   background-position: -106px -29px;
 }
 .profile-overview a:focus-visible { outline: 2px solid var(--cardinal); outline-offset: 4px; }
-#side-nav .side-nav-sub { display: flex; align-items: center; gap: 8px; }
-#side-nav .side-nav-sub img { width: 28px; height: 24px; object-fit: contain; flex-shrink: 0; }
 @media (max-width: 575.98px) {
   .experience-overview-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .experience-overview-links a { height: 80px; padding: 6px 10px; }

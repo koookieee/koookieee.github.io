@@ -435,8 +435,8 @@ a:hover {
 
 /* Keep the opening page compact while retaining readable logos. */
 @media (min-width: 1200px) {
-  body .container-fluid { max-width: 960px; }
-  .home-wrapper .picture img { max-width: 144px; }
+  body .container-fluid { max-width: 900px; }
+  .home-wrapper .picture img { max-width: 180px; }
   .home-wrapper .description { margin-top: 0; }
   .home-wrapper .description .name { margin-bottom: 12px; }
   .profile-overview { margin-top: 18px; }
@@ -468,4 +468,12 @@ a:hover {
   .bio-wrapper p { margin-bottom: 12px; }
   .experience-entry { align-items: flex-start !important; }
   .experience-entry img { max-height: 90px; object-fit: contain; }
+}
+
+/* Enlarge INSAIT within its existing logo areas. */
+.experience-overview-links a[href="#insait"] img { transform: scale(1.4); }
+#insait > div:first-child { height: 100px; overflow: hidden; }
+#insait > div:first-child img { transform: scale(1.35); }
+@media (max-width: 1199.98px) {
+  #insait > div:first-child img { max-height: 90px; object-fit: contain; }
 }

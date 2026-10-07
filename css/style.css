@@ -432,3 +432,32 @@ a:hover {
   .venue-overview-links img { height: 48px; }
   .ijcnn-wordmark { width: 73px; height: 20px; background-size: 200px 66px; background-position: -64px -18px; }
 }
+
+/* Keep the opening page compact while retaining readable logos. */
+@media (min-width: 1200px) {
+  body .container-fluid { max-width: 960px; }
+  .home-wrapper .picture img { max-width: 144px; }
+  .home-wrapper .description { margin-top: 0; }
+  .home-wrapper .description .name { margin-bottom: 12px; }
+  .profile-overview { margin-top: 18px; }
+  .experience-overview-links { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+  .experience-overview-links a { height: 76px; padding: 6px 8px; }
+  .experience-logo { height: 64px; }
+  .experience-logo img { height: 64px; }
+  .experience-overview-links a[href="#georgia-tech"] img,
+  .experience-overview-links a[href="#zocket"] img { height: auto; }
+  .venue-overview { display: grid; grid-template-columns: 94px minmax(0, 1fr); align-items: center; gap: 12px; margin-top: 14px; }
+  .venue-overview .overview-label { margin-bottom: 0; }
+  .venue-overview-links a { height: 62px; }
+  .venue-overview-links img { height: 44px; }
+  .bio-wrapper { margin-top: 20px; }
+  .bio-wrapper .section-head { margin-top: 0; }
+  .bio-wrapper .section-item { margin-top: 12px; }
+  .bio-wrapper p:last-child { margin-bottom: 0; }
+}
+
+@media (min-width: 1200px) {
+  .home-wrapper { margin-top: 24px; }
+  #exp { margin-top: 20px; }
+  #exp .section-head { margin-top: 0; }
+}

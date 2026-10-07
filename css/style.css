@@ -371,107 +371,60 @@ a:hover {
   .experience-entry > div:first-child { margin-bottom: 12px; }
 }
 
-/* A compact overview keeps every experience visible near the top. */
-.experience-overview {
-  margin: 26px 10px 0;
-  padding: 14px 0;
+/* Experience and publication overview */
+.profile-overview {
+  margin: 24px 10px 0;
+  padding: 12px 0;
   border-top: 1px solid #e8eaed;
   border-bottom: 1px solid #e8eaed;
 }
-.experience-overview-label {
-  margin-bottom: 12px;
-  font-size: 13px;
-  color: #666;
+.overview-row {
+  display: grid;
+  grid-template-columns: 94px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
 }
+.overview-label { font-size: 13px; color: #666; }
 .experience-overview-links {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: center;
   gap: 12px;
 }
 .experience-overview-links a {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  color: #333;
-  font-size: 12px;
-  line-height: 18px;
-  text-align: center;
+  justify-content: center;
+  border-radius: 4px;
 }
-.experience-overview-links img {
-  width: 80px;
-  max-width: 100%;
-  height: 40px;
-  object-fit: contain;
-}
-.experience-overview-links a:focus-visible {
-  outline: 2px solid var(--cardinal);
-  outline-offset: 4px;
-}
-#side-nav .side-nav-sub {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-#side-nav .side-nav-sub img {
-  width: 28px;
-  height: 24px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-@media (max-width: 575.98px) {
-  .experience-overview-links { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 16px; }
-}
-
-/* Larger affiliation logos; wide screens use the empty right column. */
-.experience-overview-links {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px 14px;
-}
-.experience-overview-links a { font-size: 13px; gap: 8px; }
 .experience-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
+  width: 104px;
   max-width: 100%;
-  height: 64px;
+  height: 62px;
   overflow: hidden;
 }
-.experience-overview-links .experience-logo img {
-  width: 140px;
+.experience-logo img {
+  width: 104px;
   max-width: 100%;
-  height: 64px;
+  height: 54px;
   object-fit: contain;
 }
 .experience-overview-links a[href="#georgia-tech"] img,
-.experience-overview-links a[href="#zocket"] img {
-  height: auto;
-}
-@media (min-width: 1440px) {
-  .experience-overview {
-    position: fixed;
-    left: calc(50% + 410px);
-    top: 32px;
-    width: 260px;
-    margin: 0;
-    padding: 18px;
-    border: 1px solid #e8eaed;
-    border-radius: 12px;
-    background: white;
-    max-height: calc(100vh - 64px);
-    overflow-y: auto;
-  }
-  .experience-overview-label { font-size: 14px; margin-bottom: 20px; }
-  .experience-overview-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .experience-logo { height: 60px; }
-  .experience-overview-links .experience-logo img { height: 60px; }
-  .experience-overview-links a[href="#georgia-tech"] img,
-  .experience-overview-links a[href="#zocket"] img { height: auto; }
-}
+.experience-overview-links a[href="#zocket"] img { height: auto; }
+.venue-overview { margin-top: 10px; }
+.venue-overview-links { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 28px; }
+.venue-overview-links a { font-size: 14px; font-weight: bold; color: #333; }
+.venue-note { font-size: 12px; font-weight: normal; color: #666; margin-left: 3px; }
+.profile-overview a:focus-visible { outline: 2px solid var(--cardinal); outline-offset: 4px; }
+#side-nav .side-nav-sub { display: flex; align-items: center; gap: 8px; }
+#side-nav .side-nav-sub img { width: 28px; height: 24px; object-fit: contain; flex-shrink: 0; }
 @media (max-width: 575.98px) {
-  .experience-logo { height: 56px; }
-  .experience-overview-links .experience-logo img { height: 56px; }
-  .experience-overview-links a[href="#georgia-tech"] img,
-  .experience-overview-links a[href="#zocket"] img { height: auto; }
+  .overview-row { grid-template-columns: 1fr; gap: 6px; }
+  .experience-overview-links { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 16px; }
+  .experience-logo { width: 110px; height: 58px; }
+  .experience-logo img { width: 110px; height: 54px; }
+  .venue-overview { margin-top: 14px; }
+  .venue-overview-links { gap: 12px 20px; }
 }

@@ -371,60 +371,64 @@ a:hover {
   .experience-entry > div:first-child { margin-bottom: 12px; }
 }
 
-/* Experience and publication overview */
-.profile-overview {
-  margin: 24px 10px 0;
-  padding: 12px 0;
-  border-top: 1px solid #e8eaed;
-  border-bottom: 1px solid #e8eaed;
-}
-.overview-row {
+/* Experience and publication logos */
+.profile-overview { margin: 24px 10px 0; }
+.overview-row { margin-bottom: 18px; }
+.overview-label { font-size: 13px; color: #666; margin-bottom: 10px; }
+.experience-overview-links,
+.venue-overview-links {
   display: grid;
-  grid-template-columns: 94px minmax(0, 1fr);
-  align-items: center;
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
-.overview-label { font-size: 13px; color: #666; }
-.experience-overview-links {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  align-items: center;
-  gap: 12px;
-}
-.experience-overview-links a {
+.experience-overview-links a,
+.venue-overview-links a {
   display: flex;
+  align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  height: 90px;
+  padding: 8px 12px;
+  border: 1px solid #e8eaed;
+  border-radius: 6px;
+  background: white;
 }
+.profile-overview a:hover { border-color: #c2c0bf; }
 .experience-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 104px;
+  width: 170px;
   max-width: 100%;
-  height: 62px;
+  height: 74px;
   overflow: hidden;
 }
-.experience-logo img {
-  width: 104px;
-  max-width: 100%;
-  height: 54px;
-  object-fit: contain;
-}
+.experience-logo img { width: 160px; max-width: 100%; height: 74px; object-fit: contain; }
 .experience-overview-links a[href="#georgia-tech"] img,
 .experience-overview-links a[href="#zocket"] img { height: auto; }
-.venue-overview { margin-top: 10px; }
-.venue-overview-links { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 28px; }
-.venue-overview-links a { font-size: 14px; font-weight: bold; color: #333; }
-.venue-note { font-size: 12px; font-weight: normal; color: #666; margin-left: 3px; }
+.venue-overview-links img { width: 140px; max-width: 100%; height: 62px; object-fit: contain; }
+/* Display the IJCNN wordmark without another conference year's date. */
+.ijcnn-wordmark {
+  display: block;
+  width: 122px;
+  height: 34px;
+  max-width: 100%;
+  background-image: url('../assets/logo/IJCNN.png');
+  background-repeat: no-repeat;
+  background-size: 333px 110px;
+  background-position: -106px -29px;
+}
 .profile-overview a:focus-visible { outline: 2px solid var(--cardinal); outline-offset: 4px; }
 #side-nav .side-nav-sub { display: flex; align-items: center; gap: 8px; }
 #side-nav .side-nav-sub img { width: 28px; height: 24px; object-fit: contain; flex-shrink: 0; }
 @media (max-width: 575.98px) {
-  .overview-row { grid-template-columns: 1fr; gap: 6px; }
-  .experience-overview-links { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 16px; }
-  .experience-logo { width: 110px; height: 58px; }
-  .experience-logo img { width: 110px; height: 54px; }
-  .venue-overview { margin-top: 14px; }
-  .venue-overview-links { gap: 12px 20px; }
+  .experience-overview-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .experience-overview-links a { height: 80px; padding: 6px 10px; }
+  .experience-logo { height: 66px; }
+  .experience-logo img { height: 66px; }
+  .experience-overview-links a[href="#georgia-tech"] img,
+  .experience-overview-links a[href="#zocket"] img { height: auto; }
+  .venue-overview-links { gap: 10px; }
+  .venue-overview-links a { height: 66px; padding: 8px; }
+  .venue-overview-links img { height: 48px; }
+  .ijcnn-wordmark { width: 73px; height: 20px; background-size: 200px 66px; background-position: -64px -18px; }
 }

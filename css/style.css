@@ -461,3 +461,11 @@ a:hover {
   #exp { margin-top: 20px; }
   #exp .section-head { margin-top: 0; }
 }
+@media (min-width: 1200px) {
+  .profile-overview .overview-row { margin-bottom: 12px; }
+  .venue-overview-links a { height: 52px; }
+  .bio-wrapper { line-height: 22px; }
+  .bio-wrapper p { margin-bottom: 12px; }
+  .experience-entry { align-items: flex-start !important; }
+  .experience-entry img { max-height: 90px; object-fit: contain; }
+}
